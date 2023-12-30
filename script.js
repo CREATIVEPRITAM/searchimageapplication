@@ -7,7 +7,7 @@ const showMoreBtn = document.querySelector("#show-more-button");
 
 // console.log(showMoreBtn);
 let InputData = "";
-let page = 1;
+// let page = 1;
 
 // const urfjk = https://api.unsplash.com/search/photos?query=canada&client_id=VqIPoCsqpSfJmOIqKOXltTl_z3oWb5f4EktwxrbTesw
 async function searchImages() {
@@ -41,10 +41,10 @@ async function searchImages() {
       imageWrapper.appendChild(imageLink);
       searchResults.appendChild(imageWrapper);
     });
-    page++;
-    if (page > 1) {
-      showMoreBtn.style.display = "block";
-    }
+    // page++;
+    // if (page > 1) {
+    //   showMoreBtn.style.display = "block";
+    // }
   } catch (error) {
 
     searchResults.innerHTML = error;
@@ -53,12 +53,11 @@ async function searchImages() {
 
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log("helo form element");
   page = 1;
   searchImages();
 });
 
-showMoreBtn.addEventListener("click", (event) => {
-  console.log("hello show more button");
-  searchImages();
-});
+// showMoreBtn.addEventListener("click", (event) => {
+//   console.log("hello show more button");
+//   searchImages();
+// });
